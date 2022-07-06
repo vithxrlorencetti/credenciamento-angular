@@ -1,0 +1,287 @@
+<div class="main-container">
+
+    <div class="container">
+  
+      <section>
+        <div class="card superior col-12">
+          <div class="card-body">
+            Credenciamento de clientes
+          </div>
+        </div>
+      </section>
+  
+      <section>
+        <div class="card inferior col-12">
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Novo cliente
+            </button>
+  
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Endereço</th>
+                    <th scope="col">E-mail</th>
+                </tr>
+                </thead>
+                <tbody ng-repeat="cliente in clientes">
+                
+                </tbody>
+            </table>
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Cadastro de cliente</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            
+                            <form class="form-horizontal" role="form" [formGroup]="formulario">
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Tipo Cliente</label>
+                                    <div class="col-sm-10">
+                                        <select name="tipoCliente" id="tipoCliente" formControlName="tipoCliente">
+                                            <option value="fisica">Fisica</option>
+                                            <option value="juridica">Juridica</option>
+                                        </select>
+            
+                                    </div>
+                                </div>
+            
+                                <div class="row g-2">
+                                    <div class="form-group col-md">
+                                        <div class="form-floating">                                
+                                            <input type="text" class="form-control" id="floatingInputGrid" placeholder="Nome" formControlName="nome">
+                                            <label for="floatingInputGrid">Nome do cliente</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="floatingInputGrid" placeholder="Nome Fantasia" formControlName="nomeFantasia">
+                                            <label for="floatingInputGrid">Nome Fantasia</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group col-md">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" id="floatingInputGrid" placeholder="CPF/CNPJ" formControlName="documento">
+                                        <label for="floatingInputGrid">CPF/CNPJ</label>
+                                    </div>
+                                </div>
+        
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">CEP</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="CEP" ng-blur="buscaCep()" class="form-control" placeholder="CEP..." formControlName="CEP">
+                                    </div>
+                                </div>
+            
+            
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Endereço</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="logradouro" class="form-control" placeholder="logradouro..." formControlName="endereco">
+                                    </div>
+                                </div>
+            
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Bairro</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="bairro" class="form-control" placeholder="bairro..." formControlName="bairro">
+                                    </div>
+                                </div>
+            
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Cidade</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" id="localidade" class="form-control" placeholder="localidade..." formControlName="cidade">
+                                    </div>
+                                </div>
+            
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" placeholder="email..." formControlName="email">
+                                    </div>
+                                </div>
+            
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Telefone</label>
+                                    <div class="col-sm-10">
+                                        <input type="tel" class="form-control" placeholder="telefone..." formControlName="telefone">
+                                    </div>
+                                </div>
+            
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-primary">Salvar</button>
+                                    </div>
+                                </div>
+                            </form>
+                                     
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+      </section>
+  
+    </div>
+
+    
+    
+    
+  
+    <!-- <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+  
+          
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Novo Cadastro</h4>
+              </div>
+              <div class="modal-body">
+                  <form class="form-horizontal" role="form" [formGroup]="formulario">
+  
+                      <div class="form-group">
+                          <label class="control-label col-sm-2">Tipo Cliente</label>
+                          <div class="col-sm-10">
+                              <select name="tipoCliente" id="tipoCliente" formControlName="tipoCliente">
+                                  <option value="fisica">Fisica</option>
+                                  <option value="juridica">Juridica</option>
+                              </select>
+  
+                          </div>
+                      </div>
+  
+                      <div class="form-group" ng-show="novoCliente.tipoCliente == 'fisica'">
+                          <label class="control-label col-sm-2">Nome</label>
+                          <div class="col-sm-10">
+                              <input type="text" class="form-control" placeholder="Nome..." formControlName="nome">
+                          </div>
+                      </div>
+                      <div class="form-group" ng-show="novoCliente.tipoCliente == 'juridica'">
+                          <label class="control-label col-sm-2">Nome Fantasia</label>
+                          <div class="col-sm-10">
+                              <input type="text" class="form-control" placeholder="Nome..." formControlName="nomeFantasia">
+                          </div>
+                      </div>
+  
+                      <div class="form-group">
+                          <label class="control-label col-sm-2">Documento</label>
+                          <div class="col-sm-10">
+                              <input type="tel" class="form-control" placeholder="cpf ou cpnj" formControlName="cpf">
+                          </div>
+                      </div>
+  
+                      <div class="form-group">
+                          <label class="control-label col-sm-2">Nome Fantasia</label>
+                          <div class="col-sm-10">
+                              <input type="text" class="form-control" placeholder="nome-fantasia..." formControlName="nomeFantasia">
+                          </div>
+                      </div>
+  
+                      <div class="form-group">
+                          <label class="control-label col-sm-2">CEP</label>
+                          <div class="col-sm-10">
+                              <input type="text" id="CEP" ng-blur="buscaCep()" class="form-control" placeholder="CEP..." formControlName="CEP">
+                          </div>
+                      </div>
+  
+  
+                      <div class="form-group">
+                          <label class="control-label col-sm-2">Endereço</label>
+                          <div class="col-sm-10">
+                              <input type="text" id="logradouro" class="form-control" placeholder="logradouro..." formControlName="endereco">
+                          </div>
+                      </div>
+  
+                      <div class="form-group">
+                          <label class="control-label col-sm-2">Bairro</label>
+                          <div class="col-sm-10">
+                              <input type="text" id="bairro" class="form-control" placeholder="bairro..." formControlName="bairro">
+                          </div>
+                      </div>
+  
+                      <div class="form-group">
+                          <label class="control-label col-sm-2">Cidade</label>
+                          <div class="col-sm-10">
+                              <input type="text" id="localidade" class="form-control" placeholder="localidade..." formControlName="cidade">
+                          </div>
+                      </div>
+  
+                      <div class="form-group">
+                          <label class="control-label col-sm-2">Email</label>
+                          <div class="col-sm-10">
+                              <input type="email" class="form-control" placeholder="email..." formControlName="email">
+                          </div>
+                      </div>
+  
+                      <div class="form-group">
+                          <label class="control-label col-sm-2">Telefone</label>
+                          <div class="col-sm-10">
+                              <input type="tel" class="form-control" placeholder="telefone..." formControlName="telefone">
+                          </div>
+                      </div>
+  
+                      <div class="form-group">
+                          <div class="col-sm-offset-2 col-sm-10">
+                              <button type="submit" class="btn btn-primary">Salvar</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+              </div>
+          </div>
+  
+      </div>
+    </div> -->
+  
+  </div>
+  
+  <style>
+  
+  .main-container{
+    margin: 30px;
+  }
+  
+  .container{
+    margin-top:12em;
+  }
+  
+  .superior{
+    margin-bottom:30px;
+  }
+  
+  .card-body{
+    margin-left: 15px;
+  }
+  
+  .inferior{
+    padding: 30px;
+  }
+  
+  .table {
+    margin-top: 30px;
+  }
+  
+  </style>
