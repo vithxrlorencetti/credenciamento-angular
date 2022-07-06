@@ -45,93 +45,86 @@
                             
                             <form class="form-horizontal" role="form" [formGroup]="formulario">
 
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2">Tipo Cliente</label>
-                                    <div class="col-sm-10">
-                                        <select name="tipoCliente" id="tipoCliente" formControlName="tipoCliente">
+                                <div class="form-group col-md mb-2">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                            <option selected>Selecione o tipo de cliente</option>
                                             <option value="fisica">Fisica</option>
                                             <option value="juridica">Juridica</option>
                                         </select>
-            
+                                        <label for="floatingSelect">Tipo de cliente</label>
                                     </div>
                                 </div>
             
-                                <div class="row g-2">
-                                    <div class="form-group col-md">
-                                        <div class="form-floating">                                
-                                            <input type="text" class="form-control" id="floatingInputGrid" placeholder="Nome" formControlName="nome">
-                                            <label for="floatingInputGrid">Nome do cliente</label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="floatingInputGrid" placeholder="Nome Fantasia" formControlName="nomeFantasia">
-                                            <label for="floatingInputGrid">Nome Fantasia</label>
-                                        </div>
+                                <div class="form-group col-md mb-2">
+                                    <div class="form-floating">                                
+                                        <input type="text" class="form-control" id="nome" placeholder="Nome" formControlName="nome">
+                                        <label for="floatingInputGrid">Nome do cliente</label>
                                     </div>
                                 </div>
-                                
-                                <div class="form-group col-md">
+
+                                <div class="form-group col-md mb-2">
                                     <div class="form-floating">
-                                        <input type="tel" class="form-control" id="floatingInputGrid" placeholder="CPF/CNPJ" formControlName="documento">
+                                        <input type="text" class="form-control" id="nome-fantasia" placeholder="Nome Fantasia" formControlName="nomeFantasia">
+                                        <label for="floatingInputGrid">Nome Fantasia</label>
+                                    </div>
+                                </div>
+                               
+                                <div class="form-group col-md mb-2">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" id="documento" placeholder="CPF/CNPJ" formControlName="documento">
                                         <label for="floatingInputGrid">CPF/CNPJ</label>
                                     </div>
                                 </div>
         
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2">CEP</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" id="CEP" ng-blur="buscaCep()" class="form-control" placeholder="CEP..." formControlName="CEP">
+                                <div class="form-group col-md mb-2">
+                                    <div class="form-floating">
+                                        <input type="text" id="CEP" ng-blur="buscaCep()" class="form-control" placeholder="CEP" formControlName="CEP">
+                                        <label class="floatingInputGrid">CEP</label>
                                     </div>
                                 </div>
             
-            
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2">Endereço</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" id="logradouro" class="form-control" placeholder="logradouro..." formControlName="endereco">
+                                <div class="form-group col-md mb-2">    
+                                    <div class="form-floating">
+                                        <input type="text" id="endereco" class="form-control" placeholder="Endereço" formControlName="endereco">
+                                        <label class="floatingInputGrid">Endereço</label>
                                     </div>
                                 </div>
             
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2">Bairro</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" id="bairro" class="form-control" placeholder="bairro..." formControlName="bairro">
+                                <div class="form-group col-md mb-2">
+                                    <div class="form-floating">
+                                        <input type="text" id="bairro" class="form-control" placeholder="Bairro" formControlName="bairro">
+                                        <label class="floatingInputGrid">Bairro</label>
                                     </div>
                                 </div>
             
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2">Cidade</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" id="localidade" class="form-control" placeholder="localidade..." formControlName="cidade">
+                                <div class="form-group col-md mb-2">
+                                    <div class="form-floating">
+                                        <input type="text" id="cidade" class="form-control" placeholder="Cidade" formControlName="cidade">
+                                        <label class="floatingInputGrid">Cidade</label>
                                     </div>
                                 </div>
             
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2">Email</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" placeholder="email..." formControlName="email">
+                                <div class="form-group col-md mb-2">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" placeholder="Email" formControlName="email">
+                                        <label class="floatingInputGrid">Email</label>
                                     </div>
                                 </div>
             
-                                <div class="form-group">
-                                    <label class="control-label col-sm-2">Telefone</label>
-                                    <div class="col-sm-10">
-                                        <input type="tel" class="form-control" placeholder="telefone..." formControlName="telefone">
+                                <div class="form-group col-md">     
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" placeholder="Telefone" formControlName="telefone">
+                                        <label class="floatingInputGrid">Telefone</label>
                                     </div>
                                 </div>
             
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-primary">Salvar</button>
-                                    </div>
-                                </div>
                             </form>
                                      
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn btn-primary">Salvar cliente</button>
                         </div>
                     </div>
 
