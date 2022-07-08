@@ -1,1 +1,42 @@
+<div class="main-container">
+
+    <div class="container">
+
+        <section>
+            <div class="card superior col-12">
+                <div class="card-body">
+                    <div class="logo">
+                        <img src="../assets/angular-js.png" alt="" style="width:55px">
+                    </div>
+                    <div class="botoes">
+                        <a routerLink="/" class="btn btn-primary m-4">Home</a>
+                        <a routerLink="/clientes" class="btn btn-primary m-4">Credenciamento</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</div>
+
+<style>
+
+.main-container{
+    margin: 30px;
+}
+  
+.superior{
+    margin-bottom:30px;
+}
+  
+.card-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+}
+
+</style>
+
 <router-outlet></router-outlet>

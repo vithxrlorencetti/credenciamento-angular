@@ -7,7 +7,7 @@ import { FormBuilder, Validators, FormArray } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'clientes',
+  selector: '/clientes',
   templateUrl: './clientes.component.html',
   styleUrls: ['./clientes.component.css']
 })
